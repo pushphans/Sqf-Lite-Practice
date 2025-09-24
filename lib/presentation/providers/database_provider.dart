@@ -40,6 +40,7 @@ class DatabaseProvider extends ChangeNotifier {
 
     try {
       await dbService.updateNote(note);
+      await getNotes();
     } catch (e) {
       log(e.toString());
     } finally {
@@ -52,6 +53,7 @@ class DatabaseProvider extends ChangeNotifier {
     isLoading = true;
     try {
       await dbService.deleteNote(note);
+      await getNotes();
     } catch (e) {
       log(e.toString());
     } finally {

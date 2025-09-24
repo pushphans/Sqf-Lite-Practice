@@ -85,6 +85,9 @@ class _HomeState extends State<Home> {
                       vertical: 10,
                     ),
                     child: ListTile(
+                      onLongPress: () {
+                        value.deleteNote(unit);
+                      },
                       tileColor: Colors.grey.shade600,
                       title: Text(
                         unit.title,
